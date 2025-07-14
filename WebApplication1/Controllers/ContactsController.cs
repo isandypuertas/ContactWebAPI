@@ -62,6 +62,7 @@ namespace WebApplication1.Controllers
         [Route("{id:guid}")]
         public IActionResult EditFavoriteContact(Guid id)
         {
+            var teste = "string";
             Contact contact = dBContext.Contacts.Find(id);
 
             if (contact is not null)
@@ -69,7 +70,7 @@ namespace WebApplication1.Controllers
                 contact.Favorite = !contact.Favorite;
                 dBContext.Update(contact);
                 dBContext.SaveChanges();
-            }
+            }            
 
             return Ok();
         }
